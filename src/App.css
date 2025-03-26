@@ -4,7 +4,19 @@
   padding: 2rem;
   text-align: center;
 }
+table, tr , th, td{
+border-collapse: collapse;
+border: 1px solid ;
+padding: 10px;
 
+}
+input,select{
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  align-items: center;
+ margin-bottom: 5px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
