@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";  
+import "../App.css";
+import Header from "./Header";
 
 function LoginForm() {
   const [formData, setFormData] = useState({
@@ -36,47 +38,39 @@ function LoginForm() {
   };
   
   return (
+    <> 
+     <div className="header">
+         <h1>Ticket Management</h1>
+         <button onClick={()=>handleHome()} >Home</button>
+        </div>
     <div>
       <h2>Add User</h2>
       <form onSubmit={handleSubmit}>
-      <label>
-          name:
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-        </label>
+   
+          <input type="text" name="name" placeholder="Enter Name" value={formData.name} onChange={handleChange} required />
+     
+          <input type="text" name="userName" placeholder="Enter User Name" value={formData.userName} onChange={handleChange} required />
+    
+     
+          <input type="email" name="email" placeholder="Enter Email" value={formData.email} onChange={handleChange} required />
+     
         
-        <label>
-          userName:
-          <input type="text" name="userName" value={formData.userName} onChange={handleChange} required />
-        </label>
+           <input type="tel" name="phone" placeholder="Enter Phone" value={formData.phone} onChange={handleChange} required />
+     
         
-        <label>
-          Email:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-        </label>
+          <input type="text" name="department"  placeholder="Enter Department" value={formData.department} onChange={handleChange} required />
+     
         
-        <label>
-          phone:
-          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
-        </label>
+          <input type="text" name="role" placeholder="Enter Role" value={formData.role} onChange={handleChange} required />
+     
         
-        <label>
-          department:
-          <input type="text" name="department" value={formData.department} onChange={handleChange} required />
-        </label>
-        
-        <label>
-          role:
-          <input type="text" name="role" value={formData.role} onChange={handleChange} required />
-        </label>
-        
-        <label>
-          Password:
-          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-        </label>
+          <input type="password" name="password" placeholder="Enter Password" value={formData.password} onChange={handleChange} required />
+     
         
         <button type="submit">Add User</button>
       </form>
     </div>
+    </>
   );
 }
 
