@@ -129,8 +129,9 @@ const TicketDataTable = () => {
                 {/* <td>{ticket.ticket_assignedTo.roles?.map(role => role.role).join(', ')}</td> */}
                 <td>{ticket.ticket_comment}</td>
                 <td>
-                  <button onClick={() => handleEditTicket(ticket.ticket_id)}>Edit</button>
-                  <button onClick={() => deleteTicket(ticket.ticket_id)}>Delete</button>
+                  <div className="button-group">
+                  <button  className='buttonstyle' onClick={() => handleEditTicket(ticket.ticket_id)}>Edit</button> 
+                  <button  className='buttonstyle' onClick={() => deleteTicket(ticket.ticket_id)}>Delete</button> </div>
                 </td>
               </tr>
             ))}

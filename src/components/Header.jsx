@@ -7,7 +7,7 @@ const Header = () => {
     //   };
       const handleLogout = () => {
        localStorage.removeItem('user');
-       navigate("/EmployeeLogin");
+       navigate("/");
       };
     return (
         <div className="header">

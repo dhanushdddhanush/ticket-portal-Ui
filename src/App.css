@@ -89,6 +89,10 @@ th {
   display: flex;
   gap: 10px;
 }
+.button-group {
+  display: flex;
+  gap: 10px;
+}
 .button-group2{
   display: flex;
   gap: 10px;
