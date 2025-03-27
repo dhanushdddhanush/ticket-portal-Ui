@@ -32,6 +32,9 @@ const TicketDataTable = () => {
   const handlAddTicket = () => {
     navigate("/TicketDataAdd");
   };
+  const handleEditTicket = (ticket_id) => {
+    navigate(`/TicketDataEdit/${ticket_id}`);
+  };
   const handlViewEmployee = () => {
     navigate("/EmployeeData");
   };
@@ -126,7 +129,7 @@ const TicketDataTable = () => {
                 {/* <td>{ticket.ticket_assignedTo.roles?.map(role => role.role).join(', ')}</td> */}
                 <td>{ticket.ticket_comment}</td>
                 <td>
-                  <button>Edit</button>
+                  <button onClick={() => handleEditTicket(ticket.ticket_id)}>Edit</button>
                   <button onClick={() => deleteTicket(ticket.ticket_id)}>Delete</button>
                 </td>
               </tr>

@@ -21,6 +21,7 @@ export default function App() {
         <Route path="/Dashboard" element={<DashBoard  />} />
         <Route path="/" element={<RegisterForm  />} />
         <Route path="/TicketDataAdd" element={<TicketsForm  />} />
+        <Route path="/TicketDataEdit/:ticket_id" element={<TicketsForm />} />
         <Route path="/EmployeeLogin" element={<LoginForm  />} />
         <Route path="/edit" element={<EditForm />} /> 
         <Route path="/roles" element={<Roles  />} />
