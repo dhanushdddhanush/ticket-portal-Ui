@@ -2,9 +2,9 @@ import "../App.css";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
     const navigate = useNavigate();
-    const handleHome = () => {
-        navigate("/");
-      };
+    // const handleHome = () => {
+    //     navigate("/");
+    //   };
       const handleLogout = () => {
        localStorage.removeItem('user');
        navigate("/EmployeeLogin");
@@ -12,8 +12,10 @@ const Header = () => {
     return (
         <div className="header">
          <h1>Ticket Management</h1>
-         <button onClick={()=>handleHome()} >Home</button>
+         <div className="button-group">
+         {/* <button onClick={()=>handleHome()} >Home</button> */}
          <button onClick={()=>handleLogout()} >Logout</button>
+         </div>
         </div>
     )
 }

@@ -76,8 +76,8 @@ function TicketsForm() {
          <button onClick={()=>handleHome()} >Home</button>
         </div>
     <div>
-      <h2>Add User</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="ticket-form" onSubmit={handleSubmit}>
+      <h2>Add Ticket</h2>
    
           <input type="text" name="ticket_title" placeholder="Enter Ticket Title" value={formData.ticket_title} onChange={handleChange} required />
           

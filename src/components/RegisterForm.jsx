@@ -30,7 +30,7 @@ function RegisterForm() {
     try {
       await axios.post("http://localhost:8080/user/add", formData);
       alert("User added successfully!");
-      navigate("/EmployeeData"); 
+      // navigate("/EmployeeData"); 
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to add user.");
@@ -47,9 +47,10 @@ function RegisterForm() {
          <button onClick={()=>handleHome()} >Home</button>
         </div>
     <div>
+     
+      <form className="register-form" onSubmit={handleSubmit}>
+
       <h2>Register As Employee</h2>
-      <form onSubmit={handleSubmit}>
-   
           <input type="text" name="name" placeholder="Enter Name" value={formData.name} onChange={handleChange} required />
      
           <input type="text" name="userName" placeholder="Enter User Name" value={formData.userName} onChange={handleChange} required />
@@ -71,9 +72,13 @@ function RegisterForm() {
      
         
         <button type="submit">Register</button>
+<div className="alignment-for-loginbutton">
+        <h4>Already have an account? </h4> <h4 className="underline" onClick={()=>handleLogin()}>login</h4></div>
       </form>
-      <h4>Already have an account? </h4> <p onClick={()=>handleLogin()}>Login</p>
+    
+
       </div>
+      
     </>
   );
 }

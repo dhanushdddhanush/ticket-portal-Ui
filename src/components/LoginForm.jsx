@@ -49,8 +49,8 @@ function LoginForm() {
          <button onClick={()=>handleHome()} >Home</button>
         </div>
     <div>
-      <h2>Login As Employee</h2>
       <form onSubmit={handleSubmit} >
+      <h2>Login As Employee</h2>
      
           <input type="email" name="email" placeholder="Enter Email" value={formData.email} onChange={handleChange} required />
      
@@ -61,6 +61,7 @@ function LoginForm() {
         <button type="submit"> Login</button>
       </form>
     </div>
+
     </>
   );
 }

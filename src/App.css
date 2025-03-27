@@ -1,45 +1,50 @@
-*{
+
+
+html, body {
   margin: 0;
   padding: 0;
- 
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden; 
 }
-/* #root{
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
-/* .datatable{
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
-.read-the-docs {
-  color: #888;
-}
-table, tr , th, td{
-border-collapse: collapse;
-border: 1px solid ;
-padding: 10px;
 
+* {
+  box-sizing: border-box;
 }
-input,select,textarea{
+
+
+body {
+  font-family: 'Arial', sans-serif;
   display: flex;
-  padding: 10px;
-  border-radius: 5px;
-  align-items: center;
-margin-bottom: 5px;
+  flex-direction: column;
+  background-color: #f5f5f5;
 }
-.header{
+
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-  padding:20px;
-  background-color: black;
-  color: white;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  width: 100vw; 
+  margin-left: calc(-50vw + 50%); 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+ 
 }
+
+
+.datatable {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 20px;
+  background-color: white;
+}
+
+
 .addsearch{
   display: flex;
   justify-content: space-between;
@@ -47,10 +52,132 @@ margin-bottom: 5px;
   margin-bottom: 10px;
  
 }
-/* button{
-  background-color: black;
-  color: white;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+ td {
+  border: 0.5px solid #000000;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #000000;
+  position: sticky;
+  top: 60px; 
+  color: #fff;
+  border: 0.5px solid #fff0f0;
+  padding: 12px;
+  text-align: left;
+}
+
+
+.datatable input[type="search"] {
+  width: 100%;
+  max-width: 400px;
   padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+
+.header .button-group {
+  display: flex;
+  gap: 10px;
+}
+.button-group2{
+  display: flex;
+  gap: 10px;
+}
+
+
+.header button {
+  padding: 8px 15px;
+  background-color: #ffffff;
+  color: #000000;
   border: none;
-} */
+  border-radius: 4px;
+  cursor: pointer;
+}
+.buttonstyle{
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-form,.ticket-form{
+  max-width: 450px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+margin-right: 770px;
+margin-top: 5px;
+}
+.register-form input,textarea,select {
+  width: 100%;
+  padding: 7px 15px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.register-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+form {
+  max-width: 500px;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+margin-right: 700px;
+margin-top: 100px;
+
+}
+
+form h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: left;
+  
+}
+
+form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+
+form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.alignment-for-loginbutton{
+  display: flex;
+  gap: 10px;
+}
+.underline{
+  text-decoration: underline;
+}
