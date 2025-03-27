@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";  
 import "../App.css";
-import Header from "./Header";
+
 
 function LoginForm() {
   const [formData, setFormData] = useState({
-    name: "",
-    userName: "",
     email: "",
-    phone: "",
-    department: "",
-    role: "",
     password: "",
 
   });
-
+  const[userData, setUserData] = useState([]);
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    fetch('http://localhost:8080/user')
+      .then((response) => response.json())
+      .then((data) => setUserData(data))
+      .catch(error => console.error('Error fetching user data:', error));
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -25,17 +26,21 @@ function LoginForm() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      await axios.post("http://localhost:8080/user/add", formData);
-      alert("User added successfully!");
-      navigate("/EmployeeData"); 
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Failed to add user.");
+    const user = userData.find(
+      (user) => user.email === formData.email && user.password === formData.password
+    );
+    
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user));
+      navigate('/TicketsData');
+    } else {
+      alert('Invalid email or password');
     }
   };
+   
+   
   
   return (
     <> 
@@ -44,30 +49,16 @@ function LoginForm() {
          <button onClick={()=>handleHome()} >Home</button>
         </div>
     <div>
-      <h2>Add User</h2>
-      <form onSubmit={handleSubmit}>
-   
-          <input type="text" name="name" placeholder="Enter Name" value={formData.name} onChange={handleChange} required />
-     
-          <input type="text" name="userName" placeholder="Enter User Name" value={formData.userName} onChange={handleChange} required />
-    
+      <h2>Login As Employee</h2>
+      <form onSubmit={handleSubmit} >
      
           <input type="email" name="email" placeholder="Enter Email" value={formData.email} onChange={handleChange} required />
-     
-        
-           <input type="tel" name="phone" placeholder="Enter Phone" value={formData.phone} onChange={handleChange} required />
-     
-        
-          <input type="text" name="department"  placeholder="Enter Department" value={formData.department} onChange={handleChange} required />
-     
-        
-          <input type="text" name="role" placeholder="Enter Role" value={formData.role} onChange={handleChange} required />
      
         
           <input type="password" name="password" placeholder="Enter Password" value={formData.password} onChange={handleChange} required />
      
         
-        <button type="submit">Add User</button>
+        <button type="submit"> Login</button>
       </form>
     </div>
     </>

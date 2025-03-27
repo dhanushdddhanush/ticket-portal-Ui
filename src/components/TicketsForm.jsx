@@ -62,7 +62,7 @@ function TicketsForm() {
   
       await axios.post("http://localhost:8080/tickets/add", payload);
       alert("Ticket added successfully!");
-      navigate("/TicketDataAdd"); 
+      navigate("/TicketsData"); 
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to add ticket. Error: " + (error.response?.data || error.message));

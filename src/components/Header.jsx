@@ -5,10 +5,15 @@ const Header = () => {
     const handleHome = () => {
         navigate("/");
       };
+      const handleLogout = () => {
+       localStorage.removeItem('user');
+       navigate("/EmployeeLogin");
+      };
     return (
         <div className="header">
          <h1>Ticket Management</h1>
          <button onClick={()=>handleHome()} >Home</button>
+         <button onClick={()=>handleLogout()} >Logout</button>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 import axios from 'axios';
 import Header from './Header';
@@ -6,6 +7,10 @@ import Header from './Header';
 const TicketDataTable = () => {
   const [tickets, setTickets] = useState([]);  
   const [search, setSearch] = useState("");  
+  const navigate = useNavigate();
+  const handlAddTicket=()=>{
+    navigate("/TicketDataAdd");
+  }
   
 
   useEffect(() => {
@@ -41,13 +46,18 @@ const TicketDataTable = () => {
   return (
     <>
    <Header/>
-     <div className="datatable"> <input
+     <div className="datatable"> 
+        <div className="addsearch">
+        <button onClick={()=>handlAddTicket()}>Add Ticket +</button>
+        
+        <input
         type="search"
         placeholder="Search..."
         onChange={(e) => setSearch(e.target.value)}
       />
+      </div>
 
-      <table>
+      <table >
         <thead>
           <tr>
             <th>Id</th>
@@ -76,7 +86,7 @@ const TicketDataTable = () => {
               <td>{ticket.ticket_assignedTo.name}</td>
               <td>{ticket.ticket_assignedTo.roles?.map(role => role.role)}</td>
               <td>{ticket.ticket_comment}</td>
-              <td><button onClick={() => deleteTicket(ticket.ticket_id)}>Delete</button></td>
+              <td><button>Edit</button><button onClick={() => deleteTicket(ticket.ticket_id)}>Delete</button></td>
 
             </tr>
           ))}
