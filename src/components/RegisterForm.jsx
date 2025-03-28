@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";  
 import "../App.css";
-import Header from "./Header";
+
 
 const RegisterForm=()=> {
   const [formData, setFormData] = useState({
@@ -105,7 +105,7 @@ const RegisterForm=()=> {
             <label htmlFor="Tester">Tester</label><br />
             
             </div>
-          <input type="password" name="password" placeholder="Enter Password" value={formData.password} onChange={handleChange} required />
+          <input type="password" name="password" placeholder="Enter Password" value={formData.password} onChange={handleChange}  pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$"title="Must be at least 8 characters, include 1 uppercase & 1 special character." required />
      
         
         <button type="submit">Register</button>

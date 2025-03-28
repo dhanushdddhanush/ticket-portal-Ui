@@ -120,29 +120,11 @@ const TicketsForm=() =>{
         <form className="ticket-form" onSubmit={handleSubmit}>
           <h2>{ticket_id ? "Edit Ticket" : "Add Ticket"}</h2>
    
-          <input 
-            type="text" 
-            name="ticket_title" 
-            placeholder="Enter Ticket Title" 
-            value={formData.ticket_title} 
-            onChange={handleChange} 
-            required 
-          />
+          <input  type="text"  name="ticket_title"  placeholder="Enter Ticket Title"  value={formData.ticket_title}  onChange={handleChange}  required  />
           
-          <textarea 
-            name="ticket_description" 
-            value={formData.ticket_description} 
-            onChange={handleChange} 
-            required 
-            placeholder="Enter Ticket Description"
-          />
+          <textarea  name="ticket_description"  value={formData.ticket_description}  onChange={handleChange}  required  placeholder="Enter Ticket Description"/>
           
-          <select 
-            name="ticket_priority" 
-            value={formData.ticket_priority} 
-            onChange={handleChange} 
-            required
-          >
+          <select  name="ticket_priority"  value={formData.ticket_priority}  onChange={handleChange} required>
             <option value="">Select Ticket Priority</option>
             {priorityData.map((priority) => (
               <option 
@@ -154,12 +136,7 @@ const TicketsForm=() =>{
             ))}
           </select>
           
-          <select 
-            name="ticket_status" 
-            value={formData.ticket_status} 
-            onChange={handleChange} 
-            required
-          >
+          <select  name="ticket_status"  value={formData.ticket_status}  onChange={handleChange}  required >
             <option value="">Select Ticket Status</option>
             {statusData.map((status) => (
               <option 
@@ -171,12 +148,7 @@ const TicketsForm=() =>{
             ))}
           </select>
 
-          <select 
-            name="ticket_createdBy" 
-            value={formData.ticket_createdBy} 
-            onChange={handleChange} 
-            required
-          >
+          <select  name="ticket_createdBy"  value={formData.ticket_createdBy}  onChange={handleChange}  required>
             <option value="">Select Ticket Created By</option>
             {userData.map((user) => (
               <option 
@@ -188,12 +160,7 @@ const TicketsForm=() =>{
             ))}
           </select>
 
-          <select 
-            name="ticket_assignedTo" 
-            value={formData.ticket_assignedTo} 
-            onChange={handleChange} 
-            required
-          >
+          <select name="ticket_assignedTo" value={formData.ticket_assignedTo}  onChange={handleChange} required>
             <option value="">Select Ticket Assigned To</option>
             {userData.map((user) => (
               <option 
@@ -205,12 +172,7 @@ const TicketsForm=() =>{
             ))}
           </select>
         
-          <textarea 
-            name="ticket_comment" 
-            value={formData.ticket_comment} 
-            onChange={handleChange} 
-            placeholder="Enter Ticket Comment"
-          />
+          <textarea  name="ticket_comment"  value={formData.ticket_comment}  onChange={handleChange}  placeholder="Enter Ticket Comment"/>
         
           <button type="submit">
             {ticket_id ? "Update Ticket" : "Add Ticket"}
