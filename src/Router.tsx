@@ -2,9 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import EmployeeDataTable from "./components/EmployeeDataTable";
 import React from "react";
-import Roles from "./components/Roles";
 import RegisterForm from "./components/RegisterForm";
-import EditForm from "./components/EditForm";
+
 import TicketDataTable from "./components/TicketDataTable";
 import TicketsForm from "./components/TicketsForm";
 import LoginForm from "./components/LoginForm";
@@ -23,8 +22,7 @@ export default function App() {
         <Route path="/TicketDataAdd" element={<TicketsForm   />} />
         <Route path="/TicketDataEdit/:ticket_id" element={<TicketsForm />} />
         <Route path="/" element={<LoginForm  />} />
-        <Route path="/edit" element={<EditForm />} /> 
-        <Route path="/roles" element={<Roles  />} />
+    
       </Routes>
     </BrowserRouter>
   );

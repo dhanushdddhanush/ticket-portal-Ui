@@ -4,7 +4,7 @@ import axios from "axios";
 import "../App.css";
 import Header from "./Header";
 
-function RegisterForm() {
+const RegisterForm=()=> {
   const [formData, setFormData] = useState({
     name: "",
     userName: "",
@@ -37,7 +37,10 @@ function RegisterForm() {
     }
   };
   const handleLogin=()=>{
-    navigate("/EmployeeLogin");
+    navigate("/");
+  }
+  const handleHome=()=>{
+    navigate("/");
   }
   
   return (

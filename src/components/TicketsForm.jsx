@@ -4,7 +4,7 @@ import axios from "axios";
 import "../App.css";
 import Header from "./Header";
 
-function TicketsForm() {
+const TicketsForm=() =>{
   const { ticket_id } = useParams(); 
   const navigate = useNavigate();
 
@@ -75,12 +75,12 @@ function TicketsForm() {
     }
   }, [ticket_id, userData, priorityData, statusData]);
 
-  // Handle input changes
+ 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

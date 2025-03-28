@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../App.css";
 
 
-function LoginForm() {
+const LoginForm =() => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -39,7 +39,10 @@ function LoginForm() {
       alert('Invalid email or password');
     }
   };
-   
+  const handleRegister=()=>{
+    navigate("/EmployeeRegister");
+  }
+  
    
   
   return (
@@ -59,6 +62,9 @@ function LoginForm() {
      
         
         <button type="submit"> Login</button>
+        <div className="alignment-for-loginbutton">
+        <h4> Don't have an account? </h4> <h4 className="underline" onClick={()=>handleRegister()}>Register</h4></div>
+
       </form>
     </div>
 
