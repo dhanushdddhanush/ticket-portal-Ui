@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import EmployeeDataTable from "./components/EmployeeDataTable";
 import React from "react";
@@ -22,6 +22,7 @@ export default function App() {
         <Route path="/TicketDataAdd" element={<TicketsForm   />} />
         <Route path="/TicketDataEdit/:ticket_id" element={<TicketsForm />} />
         <Route path="/" element={<LoginForm  />} />
+        <Route path="*" element={<Navigate to="/" />} />
     
       </Routes>
     </BrowserRouter>
