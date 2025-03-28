@@ -49,7 +49,6 @@ const LoginForm =() => {
     <> 
      <div className="header">
          <h1>Ticket Management</h1>
-         <button onClick={()=>handleHome()} >Home</button>
         </div>
     <div>
       <form onSubmit={handleSubmit} >

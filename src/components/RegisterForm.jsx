@@ -30,7 +30,7 @@ const RegisterForm=()=> {
     try {
       await axios.post("http://localhost:8080/user/add", formData);
       alert("User added successfully!");
-      // navigate("/EmployeeData"); 
+      navigate("/"); 
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to add user.");
