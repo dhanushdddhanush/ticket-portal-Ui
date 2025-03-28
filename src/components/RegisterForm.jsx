@@ -42,6 +42,20 @@ const RegisterForm=()=> {
   const handleHome=()=>{
     navigate("/");
   }
+  const handleRoleChange = (event) =>{
+    const { value, checked } = event.target;
+    if (checked) {
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            role: value
+        }));
+    }else{
+        setFormData((prevFormData)=> ({
+            ...prevFormData,
+            role:""
+        }));
+    }
+};
   
   return (
     <> 
@@ -65,12 +79,32 @@ const RegisterForm=()=> {
            <input type="tel" name="phone" placeholder="Enter Phone" value={formData.phone} onChange={handleChange} required />
      
         
-          <input type="text" name="department"  placeholder="Enter Department" value={formData.department} onChange={handleChange} required />
-     
+          {/* <input type="text" name="department"  placeholder="Enter Department" value={formData.department} onChange={handleChange} required />
+      */}
+         <select 
+            name="department" 
+            value={formData.department}
+            onChange={handleChange} 
+            required
+          >
+            <option value="">Select Department</option>
+            <option value="Development">Development</option>
+            <option value="Admin">Admin</option>
+            <option value="Qa">Qa</option>
+            
+          
+          </select>
+          {/* <input type="text" name="role" placeholder="Enter Role" value={formData.role} onChange={handleChange} required />
+      */}
+      <div className="checkbox-container">
         
-          <input type="text" name="role" placeholder="Enter Role" value={formData.role} onChange={handleChange} required />
-     
-        
+            <input type="checkbox" name="role" value="Developer" checked={formData.role === "Developer"} onChange={handleRoleChange}/>
+            <label htmlFor="Developer">Developer</label><br />
+           
+            <input type="checkbox" name="role" value="Tester" checked={formData.role === "Tester"} onChange={handleRoleChange}/>
+            <label htmlFor="Tester">Tester</label><br />
+            
+            </div>
           <input type="password" name="password" placeholder="Enter Password" value={formData.password} onChange={handleChange} required />
      
         

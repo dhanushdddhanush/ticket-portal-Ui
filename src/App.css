@@ -185,3 +185,15 @@ form button[type="submit"] {
 .underline{
   text-decoration: underline;
 }
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+ align-items: center;
+ justify-content: center;
+  margin-right:250px;
+ margin-bottom: 10px;
+}
+
+label,option,select{
+  color:#999494
+}
