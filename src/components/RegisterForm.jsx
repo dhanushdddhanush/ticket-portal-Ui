@@ -89,7 +89,7 @@ const RegisterForm=()=> {
           >
             <option value="">Select Department</option>
             <option value="Development">Development</option>
-            <option value="Admin">Admin</option>
+          
             <option value="Qa">Qa</option>
             
           
@@ -104,8 +104,7 @@ const RegisterForm=()=> {
            
             <input type="checkbox" name="role" value="Tester" checked={formData.role === "Tester"} onChange={handleRoleChange}/>
             <label htmlFor="Tester">Tester</label><br />
-            <input type="checkbox" name="role" value="Admin" checked={formData.role === "Admin"} onChange={handleRoleChange}/>
-            <label htmlFor="Tester">Admin</label><br />
+          
             
             </div>
           <input type="password" name="password" placeholder="Enter Password" value={formData.password} onChange={handleChange}  pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$"title="Must be at least 8 characters, include 1 uppercase & 1 special character." required />

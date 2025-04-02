@@ -11,6 +11,63 @@ html, body {
 * {
   box-sizing: border-box;
 }
+/* Modal background */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Button styles */
+.cancelbtn, .deletebtn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+.deletebtn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Modal actions layout */
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+}
 
 
 body {
@@ -190,8 +247,9 @@ form button[type="submit"] {
   flex-direction: row;
  align-items: center;
  justify-content: center;
-  margin-right:50px;
+  margin-right:190px;
  margin-bottom: 10px;
+ margin-left: 5px;
 }
 
 label,option,select{
